@@ -1,0 +1,31 @@
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [udacity]> use udacity
+Database changed
+MySQL [udacity]> describe cars;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| language_id | int         | NO   | PRI | NULL    | auto_increment |
+| model       | varchar(20) | YES  |     | NULL    |                |
+| year        | int         | YES  |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+MySQL [udacity]> select * from cars
+    -> ;
++-------------+------------+------+
+| language_id | name       | year |
++-------------+------------+------+
+|           1 | Buick      | 2016 |
++-------------+------------+------+
+1 row in set (0.00 sec)
+
+MySQL [udacity]> INSERT INTO cars
+    -> (language_id, name, year)
+    -> VALUES
+    -> ("2", "Ferrari", "2020");
+ERROR 1290 (HY000): The MySQL server is running with the --read-only option so it cannot execute this statement
+MySQL [udacity]> 
